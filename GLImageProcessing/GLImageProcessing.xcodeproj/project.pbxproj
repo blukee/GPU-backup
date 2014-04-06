@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012ABFED140B187B002A801F /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 012ABFEC140B187B002A801F /* GLTexture.m */; };
+		01549D10140BA9F9002A4C8E /* GrayscaleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01549D0F140BA9F9002A4C8E /* GrayscaleShader.fsh */; };
+		015E9AFD140B8EBA00DF7CB8 /* source_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 015E9AFC140B8EBA00DF7CB8 /* source_image.jpg */; };
+		01969B59141017540017DAB7 /* VignetteShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01969B58141017540017DAB7 /* VignetteShader.fsh */; };
+		0199F8FB14023C6A0038AA29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0199F8FA14023C6A0038AA29 /* UIKit.framework */; };
+		0199F8FD14023C6A0038AA29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0199F8FC14023C6A0038AA29 /* Foundation.framework */; };
+		0199F8FF14023C6A0038AA29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0199F8FE14023C6A0038AA29 /* CoreGraphics.framework */; };
+		0199F90114023C6A0038AA29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0199F90014023C6A0038AA29 /* QuartzCore.framework */; };
+		0199F90314023C6A0038AA29 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0199F90214023C6A0038AA29 /* OpenGLES.framework */; };
+		0199F90914023C6B0038AA29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0199F90714023C6B0038AA29 /* InfoPlist.strings */; };
+		0199F90B14023C6B0038AA29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199F90A14023C6B0038AA29 /* main.m */; };
+		0199F90F14023C6B0038AA29 /* GLImageProcessingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199F90E14023C6B0038AA29 /* GLImageProcessingAppDelegate.m */; };
+		0199F91214023C6B0038AA29 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0199F91014023C6B0038AA29 /* MainWindow.xib */; };
+		0199F91414023C6B0038AA29 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0199F91314023C6B0038AA29 /* Shader.fsh */; };
+		0199F91614023C6B0038AA29 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 0199F91514023C6B0038AA29 /* Shader.vsh */; };
+		0199F91914023C6B0038AA29 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199F91814023C6B0038AA29 /* EAGLView.m */; };
+		0199F91C14023C6B0038AA29 /* ImageProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199F91B14023C6B0038AA29 /* ImageProcessingViewController.m */; };
+		0199F91F14023C6B0038AA29 /* ImageProcessingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0199F91D14023C6B0038AA29 /* ImageProcessingViewController.xib */; };
+		01BD310C140F6BBF00E2DC24 /* SepiaShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01BD310B140F6BBF00E2DC24 /* SepiaShader.fsh */; };
+		01BD311A140F7E2D00E2DC24 /* BrightnessShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3119140F7E2D00E2DC24 /* BrightnessShader.fsh */; };
+		01BD3121140F8E9900E2DC24 /* SaturationShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3120140F8E9900E2DC24 /* SaturationShader.fsh */; };
+		01BD3128140F92C500E2DC24 /* RippleShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3127140F92C500E2DC24 /* RippleShader.fsh */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		012ABFEB140B187B002A801F /* GLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLTexture.h; sourceTree = "<group>"; };
+		012ABFEC140B187B002A801F /* GLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLTexture.m; sourceTree = "<group>"; };
+		01549D0F140BA9F9002A4C8E /* GrayscaleShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = GrayscaleShader.fsh; path = Shaders/GrayscaleShader.fsh; sourceTree = "<group>"; };
+		015E9AFC140B8EBA00DF7CB8 /* source_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = source_image.jpg; sourceTree = "<group>"; };
+		01969B58141017540017DAB7 /* VignetteShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = VignetteShader.fsh; path = Shaders/VignetteShader.fsh; sourceTree = "<group>"; };
+		0199F8F614023C6A0038AA29 /* GLImageProcessing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLImageProcessing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0199F8FA14023C6A0038AA29 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0199F8FC14023C6A0038AA29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0199F8FE14023C6A0038AA29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0199F90014023C6A0038AA29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0199F90214023C6A0038AA29 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		0199F90614023C6A0038AA29 /* GLImageProcessing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GLImageProcessing-Info.plist"; sourceTree = "<group>"; };
+		0199F90814023C6B0038AA29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0199F90A14023C6B0038AA29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0199F90C14023C6B0038AA29 /* GLImageProcessing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLImageProcessing-Prefix.pch"; sourceTree = "<group>"; };
+		0199F90D14023C6B0038AA29 /* GLImageProcessingAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLImageProcessingAppDelegate.h; sourceTree = "<group>"; };
+		0199F90E14023C6B0038AA29 /* GLImageProcessingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLImageProcessingAppDelegate.m; sourceTree = "<group>"; };
+		0199F91114023C6B0038AA29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		0199F91314023C6B0038AA29 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		0199F91514023C6B0038AA29 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		0199F91714023C6B0038AA29 /* EAGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		0199F91814023C6B0038AA29 /* EAGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		0199F91A14023C6B0038AA29 /* ImageProcessingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProcessingViewController.h; sourceTree = "<group>"; };
+		0199F91B14023C6B0038AA29 /* ImageProcessingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageProcessingViewController.m; sourceTree = "<group>"; };
+		0199F91E14023C6B0038AA29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ImageProcessingViewController.xib; sourceTree = "<group>"; };
+		01BD310B140F6BBF00E2DC24 /* SepiaShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SepiaShader.fsh; path = Shaders/SepiaShader.fsh; sourceTree = "<group>"; };
+		01BD3119140F7E2D00E2DC24 /* BrightnessShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BrightnessShader.fsh; path = Shaders/BrightnessShader.fsh; sourceTree = "<group>"; };
+		01BD3120140F8E9900E2DC24 /* SaturationShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SaturationShader.fsh; path = Shaders/SaturationShader.fsh; sourceTree = "<group>"; };
+		01BD3127140F92C500E2DC24 /* RippleShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = RippleShader.fsh; path = Shaders/RippleShader.fsh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0199F8F314023C6A0038AA29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0199F8FB14023C6A0038AA29 /* UIKit.framework in Frameworks */,
+				0199F8FD14023C6A0038AA29 /* Foundation.framework in Frameworks */,
+				0199F8FF14023C6A0038AA29 /* CoreGraphics.framework in Frameworks */,
+				0199F90114023C6A0038AA29 /* QuartzCore.framework in Frameworks */,
+				0199F90314023C6A0038AA29 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012ABFDF140AFFE4002A801F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0199F90D14023C6B0038AA29 /* GLImageProcessingAppDelegate.h */,
+				0199F90E14023C6B0038AA29 /* GLImageProcessingAppDelegate.m */,
+				0199F91014023C6B0038AA29 /* MainWindow.xib */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		012ABFE0140AFFF2002A801F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0199F91A14023C6B0038AA29 /* ImageProcessingViewController.h */,
+				0199F91B14023C6B0038AA29 /* ImageProcessingViewController.m */,
+				0199F91D14023C6B0038AA29 /* ImageProcessingViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		012ABFE1140B0007002A801F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0199F91714023C6B0038AA29 /* EAGLView.h */,
+				0199F91814023C6B0038AA29 /* EAGLView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		012AC004140B6EF6002A801F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				012ABFEB140B187B002A801F /* GLTexture.h */,
+				012ABFEC140B187B002A801F /* GLTexture.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0199F8EB14023C6A0038AA29 = {
+			isa = PBXGroup;
+			children = (
+				0199F90414023C6A0038AA29 /* GLImageProcessing */,
+				0199F8F914023C6A0038AA29 /* Frameworks */,
+				0199F8F714023C6A0038AA29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0199F8F714023C6A0038AA29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0199F8F614023C6A0038AA29 /* GLImageProcessing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0199F8F914023C6A0038AA29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0199F8FA14023C6A0038AA29 /* UIKit.framework */,
+				0199F8FC14023C6A0038AA29 /* Foundation.framework */,
+				0199F8FE14023C6A0038AA29 /* CoreGraphics.framework */,
+				0199F90014023C6A0038AA29 /* QuartzCore.framework */,
+				0199F90214023C6A0038AA29 /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0199F90414023C6A0038AA29 /* GLImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				012ABFDF140AFFE4002A801F /* Application */,
+				012ABFE0140AFFF2002A801F /* Controllers */,
+				012ABFE1140B0007002A801F /* Views */,
+				012AC004140B6EF6002A801F /* Model */,
+				0199F92514023D4A0038AA29 /* Shaders */,
+				0199F90514023C6A0038AA29 /* Supporting Files */,
+			);
+			path = GLImageProcessing;
+			sourceTree = "<group>";
+		};
+		0199F90514023C6A0038AA29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				015E9AFC140B8EBA00DF7CB8 /* source_image.jpg */,
+				0199F90614023C6A0038AA29 /* GLImageProcessing-Info.plist */,
+				0199F90714023C6B0038AA29 /* InfoPlist.strings */,
+				0199F90A14023C6B0038AA29 /* main.m */,
+				0199F90C14023C6B0038AA29 /* GLImageProcessing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0199F92514023D4A0038AA29 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				01969B58141017540017DAB7 /* VignetteShader.fsh */,
+				01BD3127140F92C500E2DC24 /* RippleShader.fsh */,
+				01BD3120140F8E9900E2DC24 /* SaturationShader.fsh */,
+				01BD3119140F7E2D00E2DC24 /* BrightnessShader.fsh */,
+				01BD310B140F6BBF00E2DC24 /* SepiaShader.fsh */,
+				01549D0F140BA9F9002A4C8E /* GrayscaleShader.fsh */,
+				0199F91314023C6B0038AA29 /* Shader.fsh */,
+				0199F91514023C6B0038AA29 /* Shader.vsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0199F8F514023C6A0038AA29 /* GLImageProcessing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0199F92214023C6B0038AA29 /* Build configuration list for PBXNativeTarget "GLImageProcessing" */;
+			buildPhases = (
+				0199F8F214023C6A0038AA29 /* Sources */,
+				0199F8F314023C6A0038AA29 /* Frameworks */,
+				0199F8F414023C6A0038AA29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLImageProcessing;
+			productName = GLImageProcessing;
+			productReference = 0199F8F614023C6A0038AA29 /* GLImageProcessing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0199F8ED14023C6A0038AA29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Aged & Distilled";
+			};
+			buildConfigurationList = 0199F8F014023C6A0038AA29 /* Build configuration list for PBXProject "GLImageProcessing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0199F8EB14023C6A0038AA29;
+			productRefGroup = 0199F8F714023C6A0038AA29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0199F8F514023C6A0038AA29 /* GLImageProcessing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0199F8F414023C6A0038AA29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0199F90914023C6B0038AA29 /* InfoPlist.strings in Resources */,
+				0199F91214023C6B0038AA29 /* MainWindow.xib in Resources */,
+				0199F91414023C6B0038AA29 /* Shader.fsh in Resources */,
+				0199F91614023C6B0038AA29 /* Shader.vsh in Resources */,
+				01549D10140BA9F9002A4C8E /* GrayscaleShader.fsh in Resources */,
+				01BD310C140F6BBF00E2DC24 /* SepiaShader.fsh in Resources */,
+				01BD311A140F7E2D00E2DC24 /* BrightnessShader.fsh in Resources */,
+				01BD3121140F8E9900E2DC24 /* SaturationShader.fsh in Resources */,
+				01BD3128140F92C500E2DC24 /* RippleShader.fsh in Resources */,
+				01969B59141017540017DAB7 /* VignetteShader.fsh in Resources */,
+				0199F91F14023C6B0038AA29 /* ImageProcessingViewController.xib in Resources */,
+				015E9AFD140B8EBA00DF7CB8 /* source_image.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0199F8F214023C6A0038AA29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0199F90B14023C6B0038AA29 /* main.m in Sources */,
+				0199F90F14023C6B0038AA29 /* GLImageProcessingAppDelegate.m in Sources */,
+				0199F91914023C6B0038AA29 /* EAGLView.m in Sources */,
+				0199F91C14023C6B0038AA29 /* ImageProcessingViewController.m in Sources */,
+				012ABFED140B187B002A801F /* GLTexture.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0199F90714023C6B0038AA29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0199F90814023C6B0038AA29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0199F91014023C6B0038AA29 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0199F91114023C6B0038AA29 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0199F91D14023C6B0038AA29 /* ImageProcessingViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0199F91E14023C6B0038AA29 /* en */,
+			);
+			name = ImageProcessingViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0199F92014023C6B0038AA29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0199F92114023C6B0038AA29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0199F92314023C6B0038AA29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GLImageProcessing/GLImageProcessing-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "GLImageProcessing/GLImageProcessing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0199F92414023C6B0038AA29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GLImageProcessing/GLImageProcessing-Prefix.pch";
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "GLImageProcessing/GLImageProcessing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0199F8F014023C6A0038AA29 /* Build configuration list for PBXProject "GLImageProcessing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0199F92014023C6B0038AA29 /* Debug */,
+				0199F92114023C6B0038AA29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0199F92214023C6B0038AA29 /* Build configuration list for PBXNativeTarget "GLImageProcessing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0199F92314023C6B0038AA29 /* Debug */,
+				0199F92414023C6B0038AA29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0199F8ED14023C6A0038AA29 /* Project object */;
+}

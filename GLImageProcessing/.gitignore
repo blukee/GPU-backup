@@ -1,0 +1,11 @@
+# ignore .DS_Store files
+*.DS_Store
+
+#ignore .xcworkspace
+project.xcworkspace
+
+#ignore xcuserdata
+xcuserdata
+
+#ignore checkpoints folder
+Checkpoints

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://webgpu.hwu.crhc.illinois.edu/attempt/666865 -->
+<html lang="en" class=" js webgl no-touch geolocation websockets localstorage webworkers svg inlinesvg smil svgclippaths" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    
+    <title>Basic Matrix Multiplication Attempt</title>
+    
+    <script async="" src="./mp2 Basic Matrix Multiplication Attempt_files/analytics.js"></script><script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-46846702-1', 'illinois.edu');
+        ga('send', 'pageview');
+    </script>
+    
+
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/eclipse.css">
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/show-hint.css">
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/bootstrap.theme.css">
+    <link rel="stylesheet" type="text/css" href="./mp2 Basic Matrix Multiplication Attempt_files/wb.css">
+    
+    <link rel="shortcut icon" type="image/ico" href="http://webgpu.hwu.crhc.illinois.edu/public/img/favicon.ico">
+
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/modernizr.2.7.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script><style type="text/css"></style>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/jquery.timeago.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/bootstrap_growl.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/codemirror.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/show-hint.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/matchbrackets.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/clike-hint.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/bootbox.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/clike.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/spin.min.js" type="text/javascript" charset="utf-8"></script><style type="text/css"></style>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/jquery.spin.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/pollymer.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/wb.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./mp2 Basic Matrix Multiplication Attempt_files/help.js" type="text/javascript" charset="utf-8"></script>
+
+    
+    
+
+    
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+
+
+  <link type="text/css" rel="stylesheet" href="chrome-extension://ckphchjljlekndhjifdfpmmnlaijimcd/style.css"><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></head>
+  <body screen_capture_injected="true" style="">
+    
+
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        
+      </button>
+      <a href="http://webgpu.hwu.crhc.illinois.edu/" class="navbar-brand">
+        
+        WebGPU
+        
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-left">
+        
+        <li class="nav-machineproblems dropdown">
+          <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Machine Problems <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/0">Device Query</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/1">Vector Addition</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/2">Basic Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/3">Tiled Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/6">Image Convolution</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/4">List Reduction</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/5">List Scan</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/11">Histograms</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/12">Vector Addition with Streams</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/7">Vector Addition (OpenCL)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/8" class="hidden">Tiled Matrix-Matrix Multiplication (C++AMP)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/9" class="hidden">Tiled Matrix-Matrix Multiplication (OpenACC)</a></li>
+          </ul>
+        </li>
+        <li class="nav-attempts dropdown">
+          <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Attempts <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/0/attempts">Device Query</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/1/attempts">Vector Addition</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/2/attempts">Basic Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/3/attempts">Tiled Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/6/attempts">Image Convolution</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/4/attempts">List Reduction</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/5/attempts">List Scan</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/11/attempts">Histogram</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/12/attempts">Vector Addition with Streams</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/7/attempts">Vector Addition (OpenCL)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/8/attempts" class="hidden">Tiled Matrix-Matrix Multiplication (C++AMP)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/9/attempts" class="hidden">Tiled Matrix-Matrix Multiplication (OpenACC)</a></li>
+          </ul>
+        </li>
+        <li class="nav-peerreview dropdown">
+          <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Peer Review <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/0/peerreview">Device Query</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/1/peerreview">Vector Addition</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/2/peerreview">Basic Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/3/peerreview">Tiled Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/6/peerreview">Image Convolution</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/4/peerreview">List Reduction</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/5/peerreview">List Scan</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/11/peerreview">Histogram</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/12/peerreview">Vector Addition with Streams</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/7/peerreview">Vector Addition (OpenCL)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/8/peerreview" class="hidden">Tiled Matrix-Matrix Multiplication (C++AMP)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/mp/9/peerreview" class="hidden">Tiled Matrix-Matrix Multiplication (OpenACC)</a></li>
+          </ul>
+        </li>
+        <li class="nav-grades dropdown">
+          <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Grades <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/0">Device Query</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/1">Vector Addition</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/2">Basic Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/3">Tiled Matrix-Matrix Multiplication</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/6">Image Convolution</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/4">List Reduction</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/5">List Scan</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/11">Histogram</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/12">Vector Addition with Streams</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/7">Vector Addition (OpenCL)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/8" class="hidden">Tiled Matrix-Matrix Multiplication (C++AMP)</a></li>
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/grades/9" class="hidden">Tiled Matrix-Matrix Multiplication (OpenACC)</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="nav-machineproblems dropdown">
+          <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://webgpu.hwu.crhc.illinois.edu/help">Tutorial</a></li>
+              <li class="divider"></li>
+            <li><a href="http://github.com/abduld/libwb">Local Development</a></li>
+            <li><a href="http://github.com/abduld/wb/issues">Report Issues</a></li>
+              <li class="divider"></li>
+              <li><a href="http://webgpu.hwu.crhc.illinois.edu/reset_password">Reset Password</a></li>
+          </ul>
+        </li>
+
+        
+          <li class="nav-machineproblems dropdown">
+            <a href="http://webgpu.hwu.crhc.illinois.edu/#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              
+              <li class="divider"></li>
+              <li><a href="http://webgpu.hwu.crhc.illinois.edu/logout">Logout blukee</a></li>
+            </ul>
+          </li>
+        
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+    
+    
+
+
+
+
+    <br>
+
+
+
+
+<div class="container">
+	<div class="hidden mp_num">.mp.Number</div>
+	<div class="row">
+		<h3 class="col-md-10">
+			<a href="http://webgpu.hwu.crhc.illinois.edu/mp/2?show=code">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			&nbsp;
+			Basic Matrix Multiplication Attempt
+		</h3>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="row">
+				<h3 class="col-md-9">
+					Attempt Summary
+				</h3>
+				
+					<a href="http://webgpu.hwu.crhc.illinois.edu/share/blukee-5638-dac1f5d8-12d8-4afe-41c4-5b4b7c067dd5" class="col-md-3 text-right btn btn-lg btn-danger">
+						Share Attempt
+					</a>
+				
+			</div>
+		</div>
+		<div class="panel-body">
+			<table class="table table-striped">
+				<tbody>
+					<tr>
+						<td>
+							Dataset Id:
+						</td>
+						<td>
+							
+								5
+							
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Created:
+						</td>
+						<td>
+							<abbr class="timeago" title="2014-02-27 14:54:32 -0600 CST">4 minutes ago</abbr>
+						</td>
+					</tr>
+					<tr class="hidden">
+						<td>
+							RunId:
+						</td>
+						<td>
+							blukee-5638-dac1f5d8-12d8-4afe-41c4-5b4b7c067dd5
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							Status:
+						</td>
+						<td>
+							Correct solution for this dataset.
+						</td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+		
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>
+					Timer Output
+				</h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>
+								Kind
+							</th>
+							<th>
+								Location
+							</th>
+							<th>
+								Time (ms)
+							</th>
+							<th>
+								Message
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<tr>
+							<td>
+								<strong>Generic</strong>
+							</td>
+							<td>
+								main.cu::48
+							</td>
+							<td>
+								13.78416
+							</td>
+							<td>
+								Importing data and creating memory on host
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<strong>GPU</strong>
+							</td>
+							<td>
+								main.cu::62
+							</td>
+							<td>
+								0.424517
+							</td>
+							<td>
+								Allocating GPU memory.
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<strong>GPU</strong>
+							</td>
+							<td>
+								main.cu::70
+							</td>
+							<td>
+								0.12461
+							</td>
+							<td>
+								Copying input memory to the GPU.
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<strong>Compute</strong>
+							</td>
+							<td>
+								main.cu::82
+							</td>
+							<td>
+								0.309335
+							</td>
+							<td>
+								Performing CUDA computation
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<strong>Copy</strong>
+							</td>
+							<td>
+								main.cu::88
+							</td>
+							<td>
+								0.124147
+							</td>
+							<td>
+								Copying output memory to the CPU
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<strong>GPU</strong>
+							</td>
+							<td>
+								main.cu::95
+							</td>
+							<td>
+								0.191034
+							</td>
+							<td>
+								Freeing GPU Memory
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>
+					Logger Output
+				</h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>
+								Level
+							</th>
+							<th>
+								Location
+							</th>
+							<th>
+								Message
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<tr class="">
+							<td>
+								<strong>Trace</strong>
+							</td>
+							<td>
+								main::58
+							</td>
+							<td>
+								The dimensions of A are 200 x 100
+							</td>
+						</tr>
+						
+						<tr class="">
+							<td>
+								<strong>Trace</strong>
+							</td>
+							<td>
+								main::59
+							</td>
+							<td>
+								The dimensions of B are 100 x 256
+							</td>
+						</tr>
+						
+						<tr class="">
+							<td>
+								<strong>Trace</strong>
+							</td>
+							<td>
+								main::60
+							</td>
+							<td>
+								The dimensions of C are 200 x 256
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	
+	
+	
+	
+	
+</div>
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>
+				Program Code
+			</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="codemirror">
+					<textarea class="readonly code-editor" style="display: none;">#include    &lt;wb.h&gt;
+
+#define wbCheck(stmt) do {                                                    \
+        cudaError_t err = stmt;                                               \
+        if (err != cudaSuccess) {                                             \
+            wbLog(ERROR, "Failed to run stmt ", #stmt);                       \
+            wbLog(ERROR, "Got CUDA error ...  ", cudaGetErrorString(err));    \
+            return -1;                                                        \
+        }                                                                     \
+    } while(0)
+
+// Compute C = A * B
+__global__ void matrixMultiply(float * A, float * B, float * C,
+                   int numARows, int numAColumns,
+                   int numBRows, int numBColumns,
+                   int numCRows, int numCColumns) {
+    //@@ Insert code to implement matrix multiplication here
+	int Row = blockIdx.y*blockDim.y+threadIdx.y;
+	int Col = blockIdx.x*blockDim.x+threadIdx.x;
+	
+	
+	if ((Row &lt; numCRows) &amp;&amp; (Col &lt; numCColumns)){
+		float Cvalue = 0.0;
+		for (int i = 0; i &lt; numAColumns; ++i) {
+			Cvalue += A[Row*numAColumns+i] * B[i*numBColumns+Col];
+		}
+		C[Row*numCColumns+Col] = Cvalue;
+	}
+}
+
+int main(int argc, char ** argv) {
+    wbArg_t args;
+    float * hostA; // The A matrix
+    float * hostB; // The B matrix
+    float * hostC; // The output C matrix
+    float * deviceA;
+    float * deviceB;
+    float * deviceC;
+    int numARows; // number of rows in the matrix A
+    int numAColumns; // number of columns in the matrix A
+    int numBRows; // number of rows in the matrix B
+    int numBColumns; // number of columns in the matrix B
+    int numCRows; // number of rows in the matrix C (you have to set this)
+    int numCColumns; // number of columns in the matrix C (you have to set this)
+
+    args = wbArg_read(argc, argv);
+
+    wbTime_start(Generic, "Importing data and creating memory on host");
+    hostA = (float *) wbImport(wbArg_getInputFile(args, 0), &amp;numARows, &amp;numAColumns);
+    hostB = (float *) wbImport(wbArg_getInputFile(args, 1), &amp;numBRows, &amp;numBColumns);
+    //@@ Set numCRows and numCColumns
+    numCRows = numARows;
+    numCColumns = numBColumns;
+    //@@ Allocate the hostC matrix
+    wbTime_stop(Generic, "Importing data and creating memory on host");
+	hostC = (float *)malloc(numCRows * numCColumns * sizeof(float));
+	
+    wbLog(TRACE, "The dimensions of A are ", numARows, " x ", numAColumns);
+    wbLog(TRACE, "The dimensions of B are ", numBRows, " x ", numBColumns);
+	wbLog(TRACE, "The dimensions of C are ", numCRows, " x ", numCColumns);
+
+    wbTime_start(GPU, "Allocating GPU memory.");
+    //@@ Allocate GPU memory here
+	wbCheck(cudaMalloc((void**)&amp;deviceA, numARows * numAColumns * sizeof(float)));
+	wbCheck(cudaMalloc((void**)&amp;deviceB, numBRows * numBColumns * sizeof(float)));
+	wbCheck(cudaMalloc((void**)&amp;deviceC, numCRows * numCColumns * sizeof(float)));
+
+    wbTime_stop(GPU, "Allocating GPU memory.");
+
+    wbTime_start(GPU, "Copying input memory to the GPU.");
+    //@@ Copy memory to the GPU here
+	wbCheck(cudaMemcpy(deviceA, hostA, numARows * numAColumns * sizeof(float), cudaMemcpyHostToDevice));
+	wbCheck(cudaMemcpy(deviceB, hostB, numBRows * numBColumns * sizeof(float), cudaMemcpyHostToDevice));
+	
+
+    wbTime_stop(GPU, "Copying input memory to the GPU.");
+    
+    //@@ Initialize the grid and block dimensions here
+    dim3 DimGrid((numCColumns-1)/16 + 1, (numCRows-1)/16+1, 1);
+	dim3 DimBlock(16, 16, 1);			 
+	
+    wbTime_start(Compute, "Performing CUDA computation");
+    //@@ Launch the GPU Kernel here
+	matrixMultiply&lt;&lt;&lt;DimGrid,DimBlock&gt;&gt;&gt;(deviceA, deviceB, deviceC, numARows, numAColumns, numBRows, numBColumns, numCRows, numCColumns);
+    cudaThreadSynchronize();
+    wbTime_stop(Compute, "Performing CUDA computation");
+    
+    wbTime_start(Copy, "Copying output memory to the CPU");
+    //@@ Copy the GPU memory back to the CPU here
+	wbCheck(cudaMemcpy(hostC, deviceC, numCRows * numCColumns * sizeof(float), cudaMemcpyDeviceToHost));
+	
+				 
+    wbTime_stop(Copy, "Copying output memory to the CPU");
+
+    wbTime_start(GPU, "Freeing GPU Memory");
+    //@@ Free the GPU memory here
+	wbCheck(cudaFree(deviceA));
+	wbCheck(cudaFree(deviceB));
+	wbCheck(cudaFree(deviceC));
+
+    wbTime_stop(GPU, "Freeing GPU Memory");
+
+    wbSolution(args, hostC, numCRows, numCColumns);
+
+    free(hostA);
+    free(hostB);
+    free(hostC);
+
+    return 0;
+}
+
+</textarea><div class="CodeMirror cm-s-eclipse" style="height: 80%;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 37px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 33px; right: 15px;"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar" style="bottom: 15px;"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" style="width: 15px; height: 15px;"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="min-width: 1133px; margin-left: 33px; min-height: 1576px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"></div><div class="CodeMirror-code" style=""><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">1</div></div><pre><span class="cm-meta">#include    &lt;wb.h&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">2</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">3</div></div><pre><span class="cm-meta">#define wbCheck(stmt) do {                                                    \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">4</div></div><pre>        <span class="cm-meta">cudaError_t err = stmt;                                               \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">5</div></div><pre>        <span class="cm-meta">if (err != cudaSuccess) {                                             \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">6</div></div><pre>            <span class="cm-meta">wbLog(ERROR, "Failed to run stmt ", #stmt);                       \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">7</div></div><pre>            <span class="cm-meta">wbLog(ERROR, "Got CUDA error ...  ", cudaGetErrorString(err));    \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">8</div></div><pre>            <span class="cm-meta">return -1;                                                        \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">9</div></div><pre>        <span class="cm-meta">}                                                                     \</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">10</div></div><pre>    <span class="cm-meta">} while(0)</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">11</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">12</div></div><pre><span class="cm-comment">// Compute C = A * B</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">13</div></div><pre><span class="cm-keyword">__global__</span> <span class="cm-keyword">void</span> <span class="cm-variable">matrixMultiply</span>(<span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">A</span>, <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">B</span>, <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">C</span>,</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">14</div></div><pre>                   <span class="cm-keyword">int</span> <span class="cm-variable">numARows</span>, <span class="cm-keyword">int</span> <span class="cm-variable">numAColumns</span>,</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">15</div></div><pre>                   <span class="cm-keyword">int</span> <span class="cm-variable">numBRows</span>, <span class="cm-keyword">int</span> <span class="cm-variable">numBColumns</span>,</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">16</div></div><pre>                   <span class="cm-keyword">int</span> <span class="cm-variable">numCRows</span>, <span class="cm-keyword">int</span> <span class="cm-variable">numCColumns</span>) {</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">17</div></div><pre>    <span class="cm-large-comment">//@@ Insert code to implement matrix multiplication here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">18</div></div><pre><span class="cm-tab">    </span><span class="cm-keyword">int</span> <span class="cm-variable">Row</span> <span class="cm-operator">=</span> <span class="cm-keyword">blockIdx</span>.<span class="cm-variable">y</span><span class="cm-operator">*</span><span class="cm-keyword">blockDim</span>.<span class="cm-variable">y</span><span class="cm-operator">+</span><span class="cm-keyword">threadIdx</span>.<span class="cm-variable">y</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">19</div></div><pre><span class="cm-tab">    </span><span class="cm-keyword">int</span> <span class="cm-variable">Col</span> <span class="cm-operator">=</span> <span class="cm-keyword">blockIdx</span>.<span class="cm-variable">x</span><span class="cm-operator">*</span><span class="cm-keyword">blockDim</span>.<span class="cm-variable">x</span><span class="cm-operator">+</span><span class="cm-keyword">threadIdx</span>.<span class="cm-variable">x</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">20</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">21</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">22</div></div><pre><span class="cm-tab">    </span><span class="cm-keyword">if</span> ((<span class="cm-variable">Row</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">numCRows</span>) <span class="cm-operator">&amp;&amp;</span> (<span class="cm-variable">Col</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">numCColumns</span>)){</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">23</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-keyword">float</span> <span class="cm-variable">Cvalue</span> <span class="cm-operator">=</span> <span class="cm-number">0.0</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">24</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-keyword">for</span> (<span class="cm-keyword">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">numAColumns</span>; <span class="cm-operator">++</span><span class="cm-variable">i</span>) {</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">25</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-variable">Cvalue</span> <span class="cm-operator">+=</span> <span class="cm-variable">A</span>[<span class="cm-variable">Row</span><span class="cm-operator">*</span><span class="cm-variable">numAColumns</span><span class="cm-operator">+</span><span class="cm-variable">i</span>] <span class="cm-operator">*</span> <span class="cm-variable">B</span>[<span class="cm-variable">i</span><span class="cm-operator">*</span><span class="cm-variable">numBColumns</span><span class="cm-operator">+</span><span class="cm-variable">Col</span>];</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">26</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">27</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-variable">C</span>[<span class="cm-variable">Row</span><span class="cm-operator">*</span><span class="cm-variable">numCColumns</span><span class="cm-operator">+</span><span class="cm-variable">Col</span>] <span class="cm-operator">=</span> <span class="cm-variable">Cvalue</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">28</div></div><pre><span class="cm-tab">    </span>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">29</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">30</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">31</div></div><pre><span class="cm-keyword">int</span> <span class="cm-variable">main</span>(<span class="cm-keyword">int</span> <span class="cm-variable">argc</span>, <span class="cm-keyword">char</span> <span class="cm-operator">**</span> <span class="cm-variable">argv</span>) {</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">32</div></div><pre>    <span class="cm-variable">wbArg_t</span> <span class="cm-variable">args</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">33</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">hostA</span>; <span class="cm-comment">// The A matrix</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">34</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">hostB</span>; <span class="cm-comment">// The B matrix</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">35</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">hostC</span>; <span class="cm-comment">// The output C matrix</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">36</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">deviceA</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">37</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">deviceB</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">38</div></div><pre>    <span class="cm-keyword">float</span> <span class="cm-operator">*</span> <span class="cm-variable">deviceC</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">39</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numARows</span>; <span class="cm-comment">// number of rows in the matrix A</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">40</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numAColumns</span>; <span class="cm-comment">// number of columns in the matrix A</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">41</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numBRows</span>; <span class="cm-comment">// number of rows in the matrix B</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">42</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numBColumns</span>; <span class="cm-comment">// number of columns in the matrix B</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">43</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numCRows</span>; <span class="cm-comment">// number of rows in the matrix C (you have to set this)</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">44</div></div><pre>    <span class="cm-keyword">int</span> <span class="cm-variable">numCColumns</span>; <span class="cm-comment">// number of columns in the matrix C (you have to set this)</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">45</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">46</div></div><pre>    <span class="cm-variable">args</span> <span class="cm-operator">=</span> <span class="cm-variable">wbArg_read</span>(<span class="cm-variable">argc</span>, <span class="cm-variable">argv</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">47</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">48</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">Generic</span>, <span class="cm-string">"Importing data and creating memory on host"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">49</div></div><pre>    <span class="cm-variable">hostA</span> <span class="cm-operator">=</span> (<span class="cm-keyword">float</span> <span class="cm-operator">*</span>) <span class="cm-variable">wbImport</span>(<span class="cm-variable">wbArg_getInputFile</span>(<span class="cm-variable">args</span>, <span class="cm-number">0</span>), <span class="cm-operator">&amp;</span><span class="cm-variable">numARows</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">numAColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">50</div></div><pre>    <span class="cm-variable">hostB</span> <span class="cm-operator">=</span> (<span class="cm-keyword">float</span> <span class="cm-operator">*</span>) <span class="cm-variable">wbImport</span>(<span class="cm-variable">wbArg_getInputFile</span>(<span class="cm-variable">args</span>, <span class="cm-number">1</span>), <span class="cm-operator">&amp;</span><span class="cm-variable">numBRows</span>, <span class="cm-operator">&amp;</span><span class="cm-variable">numBColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">51</div></div><pre>    <span class="cm-large-comment">//@@ Set numCRows and numCColumns</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">52</div></div><pre>    <span class="cm-variable">numCRows</span> <span class="cm-operator">=</span> <span class="cm-variable">numARows</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">53</div></div><pre>    <span class="cm-variable">numCColumns</span> <span class="cm-operator">=</span> <span class="cm-variable">numBColumns</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">54</div></div><pre>    <span class="cm-large-comment">//@@ Allocate the hostC matrix</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">55</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">Generic</span>, <span class="cm-string">"Importing data and creating memory on host"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">56</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">hostC</span> <span class="cm-operator">=</span> (<span class="cm-keyword">float</span> <span class="cm-operator">*</span>)<span class="cm-variable">malloc</span>(<span class="cm-variable">numCRows</span> <span class="cm-operator">*</span> <span class="cm-variable">numCColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">57</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">58</div></div><pre>    <span class="cm-variable">wbLog</span>(<span class="cm-variable">TRACE</span>, <span class="cm-string">"The dimensions of A are "</span>, <span class="cm-variable">numARows</span>, <span class="cm-string">" x "</span>, <span class="cm-variable">numAColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">59</div></div><pre>    <span class="cm-variable">wbLog</span>(<span class="cm-variable">TRACE</span>, <span class="cm-string">"The dimensions of B are "</span>, <span class="cm-variable">numBRows</span>, <span class="cm-string">" x "</span>, <span class="cm-variable">numBColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">60</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbLog</span>(<span class="cm-variable">TRACE</span>, <span class="cm-string">"The dimensions of C are "</span>, <span class="cm-variable">numCRows</span>, <span class="cm-string">" x "</span>, <span class="cm-variable">numCColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">61</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">62</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Allocating GPU memory."</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">63</div></div><pre>    <span class="cm-large-comment">//@@ Allocate GPU memory here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">64</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMalloc</span>((<span class="cm-keyword">void</span><span class="cm-operator">**</span>)<span class="cm-operator">&amp;</span><span class="cm-variable">deviceA</span>, <span class="cm-variable">numARows</span> <span class="cm-operator">*</span> <span class="cm-variable">numAColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>)));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">65</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMalloc</span>((<span class="cm-keyword">void</span><span class="cm-operator">**</span>)<span class="cm-operator">&amp;</span><span class="cm-variable">deviceB</span>, <span class="cm-variable">numBRows</span> <span class="cm-operator">*</span> <span class="cm-variable">numBColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>)));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">66</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMalloc</span>((<span class="cm-keyword">void</span><span class="cm-operator">**</span>)<span class="cm-operator">&amp;</span><span class="cm-variable">deviceC</span>, <span class="cm-variable">numCRows</span> <span class="cm-operator">*</span> <span class="cm-variable">numCColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>)));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">67</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">68</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Allocating GPU memory."</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">69</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">70</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Copying input memory to the GPU."</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">71</div></div><pre>    <span class="cm-large-comment">//@@ Copy memory to the GPU here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">72</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMemcpy</span>(<span class="cm-variable">deviceA</span>, <span class="cm-variable">hostA</span>, <span class="cm-variable">numARows</span> <span class="cm-operator">*</span> <span class="cm-variable">numAColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>), <span class="cm-variable">cudaMemcpyHostToDevice</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">73</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMemcpy</span>(<span class="cm-variable">deviceB</span>, <span class="cm-variable">hostB</span>, <span class="cm-variable">numBRows</span> <span class="cm-operator">*</span> <span class="cm-variable">numBColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>), <span class="cm-variable">cudaMemcpyHostToDevice</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">74</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">75</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">76</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Copying input memory to the GPU."</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">77</div></div><pre>    </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">78</div></div><pre>    <span class="cm-large-comment">//@@ Initialize the grid and block dimensions here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">79</div></div><pre>    <span class="cm-variable">dim3</span> <span class="cm-variable">DimGrid</span>((<span class="cm-variable">numCColumns</span><span class="cm-operator">-</span><span class="cm-number">1</span>)<span class="cm-operator">/</span><span class="cm-number">16</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, (<span class="cm-variable">numCRows</span><span class="cm-operator">-</span><span class="cm-number">1</span>)<span class="cm-operator">/</span><span class="cm-number">16</span><span class="cm-operator">+</span><span class="cm-number">1</span>, <span class="cm-number">1</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">80</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">dim3</span> <span class="cm-variable">DimBlock</span>(<span class="cm-number">16</span>, <span class="cm-number">16</span>, <span class="cm-number">1</span>);<span class="cm-tab">   </span><span class="cm-tab">    </span><span class="cm-tab">    </span> </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">81</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">82</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">Compute</span>, <span class="cm-string">"Performing CUDA computation"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">83</div></div><pre>    <span class="cm-large-comment">//@@ Launch the GPU Kernel here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">84</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">matrixMultiply</span><span class="cm-operator">&lt;&lt;&lt;</span><span class="cm-variable">DimGrid</span>,<span class="cm-variable">DimBlock</span><span class="cm-operator">&gt;&gt;&gt;</span>(<span class="cm-variable">deviceA</span>, <span class="cm-variable">deviceB</span>, <span class="cm-variable">deviceC</span>, <span class="cm-variable">numARows</span>, <span class="cm-variable">numAColumns</span>, <span class="cm-variable">numBRows</span>, <span class="cm-variable">numBColumns</span>, <span class="cm-variable">numCRows</span>, <span class="cm-variable">numCColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">85</div></div><pre>    <span class="cm-variable">cudaThreadSynchronize</span>();</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">86</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">Compute</span>, <span class="cm-string">"Performing CUDA computation"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">87</div></div><pre>    </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">88</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">Copy</span>, <span class="cm-string">"Copying output memory to the CPU"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">89</div></div><pre>    <span class="cm-large-comment">//@@ Copy the GPU memory back to the CPU here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">90</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaMemcpy</span>(<span class="cm-variable">hostC</span>, <span class="cm-variable">deviceC</span>, <span class="cm-variable">numCRows</span> <span class="cm-operator">*</span> <span class="cm-variable">numCColumns</span> <span class="cm-operator">*</span> <span class="cm-keyword">sizeof</span>(<span class="cm-keyword">float</span>), <span class="cm-variable">cudaMemcpyDeviceToHost</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">91</div></div><pre><span class="cm-tab">    </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">92</div></div><pre><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-tab">    </span><span class="cm-tab">    </span> </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">93</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">Copy</span>, <span class="cm-string">"Copying output memory to the CPU"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">94</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">95</div></div><pre>    <span class="cm-variable">wbTime_start</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Freeing GPU Memory"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">96</div></div><pre>    <span class="cm-large-comment">//@@ Free the GPU memory here</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">97</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaFree</span>(<span class="cm-variable">deviceA</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">98</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaFree</span>(<span class="cm-variable">deviceB</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">99</div></div><pre><span class="cm-tab">    </span><span class="cm-variable">wbCheck</span>(<span class="cm-variable">cudaFree</span>(<span class="cm-variable">deviceC</span>));</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">100</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">101</div></div><pre>    <span class="cm-variable">wbTime_stop</span>(<span class="cm-variable">GPU</span>, <span class="cm-string">"Freeing GPU Memory"</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">102</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">103</div></div><pre>    <span class="cm-variable">wbSolution</span>(<span class="cm-variable">args</span>, <span class="cm-variable">hostC</span>, <span class="cm-variable">numCRows</span>, <span class="cm-variable">numCColumns</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">104</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">105</div></div><pre>    <span class="cm-variable">free</span>(<span class="cm-variable">hostA</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">106</div></div><pre>    <span class="cm-variable">free</span>(<span class="cm-variable">hostB</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">107</div></div><pre>    <span class="cm-variable">free</span>(<span class="cm-variable">hostC</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">108</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">109</div></div><pre>    <span class="cm-keyword">return</span> <span class="cm-number">0</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">110</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">111</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">112</div></div><pre>&nbsp;</pre></div></div><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 14px;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 1576px;"></div><div class="CodeMirror-gutters" style="height: 1576px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3>Current Answers</h3>
+	</div>
+	
+<div class="panel-body">
+	
+	<div class="row">
+		<p class="lead"> <b class="question-number">1</b>
+			.How many floating operations are being performed in your matrix multiply kernel? explain.
+		</p>
+	</div>
+	<div class="row">
+		<textarea class="answer form-control" id="1" placeholder="rowC x colC x colA x 2 (mul/add)"></textarea>
+	</div>
+	<div class="row">
+		
+		<a href="http://webgpu.hwu.crhc.illinois.edu/question/history/2/1">
+			<div class="col-lg-1 text-left text-muted">
+				(History)
+			</div>
+		</a>
+		<div class="col-lg-offset-9 text-right">
+			<div class="text-muted">
+				<small>
+					(<abbr class="timeago" title="2014-02-27T10:52:05-06:00">about 4 hours ago</abbr>)
+				</small>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	
+	<div class="row">
+		<p class="lead"> <b class="question-number">2</b>
+			.How many global memory reads are being performed by your kernel? explain.
+		</p>
+	</div>
+	<div class="row">
+		<textarea class="answer form-control" id="2" placeholder="rowC x colC x colA x 2"></textarea>
+	</div>
+	<div class="row">
+		
+		<a href="http://webgpu.hwu.crhc.illinois.edu/question/history/2/2">
+			<div class="col-lg-1 text-left text-muted">
+				(History)
+			</div>
+		</a>
+		<div class="col-lg-offset-9 text-right">
+			<div class="text-muted">
+				<small>
+					(<abbr class="timeago" title="2014-02-27T10:52:05-06:00">about 4 hours ago</abbr>)
+				</small>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	
+	<div class="row">
+		<p class="lead"> <b class="question-number">3</b>
+			.How many global memory writes are being performed by your kernel? explain.
+		</p>
+	</div>
+	<div class="row">
+		<textarea class="answer form-control" id="3" placeholder="rowC x colC"></textarea>
+	</div>
+	<div class="row">
+		
+		<a href="http://webgpu.hwu.crhc.illinois.edu/question/history/2/3">
+			<div class="col-lg-1 text-left text-muted">
+				(History)
+			</div>
+		</a>
+		<div class="col-lg-offset-9 text-right">
+			<div class="text-muted">
+				<small>
+					(<abbr class="timeago" title="2014-02-27T10:52:05-06:00">about 4 hours ago</abbr>)
+				</small>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	
+	<div class="row">
+		<p class="lead"> <b class="question-number">4</b>
+			.Describe what possible optimizations can be implemented to your kernel to achieve a performance speedup.
+		</p>
+	</div>
+	<div class="row">
+		<textarea class="answer form-control" id="4" placeholder="use shared memory and tile matrix multiplication; less global memory access time"></textarea>
+	</div>
+	<div class="row">
+		
+		<a href="http://webgpu.hwu.crhc.illinois.edu/question/history/2/4">
+			<div class="col-lg-1 text-left text-muted">
+				(History)
+			</div>
+		</a>
+		<div class="col-lg-offset-9 text-right">
+			<div class="text-muted">
+				<small>
+					(<abbr class="timeago" title="2014-02-27T10:52:05-06:00">about 4 hours ago</abbr>)
+				</small>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	
+	<div class="row">
+		<p class="lead"> <b class="question-number">5</b>
+			.Name three applications of matrix multiplication.
+		</p>
+	</div>
+	<div class="row">
+		<textarea class="answer form-control" id="5" placeholder="No answer"></textarea>
+	</div>
+	<div class="row">
+		
+		<a href="http://webgpu.hwu.crhc.illinois.edu/question/history/2/5">
+			<div class="col-lg-1 text-left text-muted">
+				(History)
+			</div>
+		</a>
+		<div class="col-lg-offset-9 text-right">
+			<div class="text-muted">
+				<small>
+					(<abbr class="timeago" title="2014-02-27T10:52:05-06:00">about 4 hours ago</abbr>)
+				</small>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	
+</div>
+
+	
+</div>
+</div>
+
+
+
+
+
+	<footer class="footer container" role="contentinfo">
+	  <div class="container">
+	  	
+		  <p>
+	        Designed for the <a href="https://class.coursera.org/hetero-002">Heterogeneous Parallel Programming</a> Coursera Course.
+	    </p>
+	  </div>
+	</footer>
+
+	
+  	
+
+
+
+
+</body></html>

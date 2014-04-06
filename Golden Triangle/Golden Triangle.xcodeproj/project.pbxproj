@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DD5304818B95D8C009EF53C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD5304718B95D8C009EF53C /* Cocoa.framework */; };
+		7DD5305218B95D8C009EF53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5305018B95D8C009EF53C /* InfoPlist.strings */; };
+		7DD5305418B95D8C009EF53C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5305318B95D8C009EF53C /* main.m */; };
+		7DD5305818B95D8C009EF53C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5305618B95D8C009EF53C /* Credits.rtf */; };
+		7DD5305B18B95D8C009EF53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5305A18B95D8C009EF53C /* AppDelegate.m */; };
+		7DD5305E18B95D8C009EF53C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5305C18B95D8C009EF53C /* MainMenu.xib */; };
+		7DD5306018B95D8C009EF53C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5305F18B95D8C009EF53C /* Images.xcassets */; };
+		7DD5306718B95D8C009EF53C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD5306618B95D8C009EF53C /* XCTest.framework */; };
+		7DD5306818B95D8C009EF53C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD5304718B95D8C009EF53C /* Cocoa.framework */; };
+		7DD5307018B95D8C009EF53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5306E18B95D8C009EF53C /* InfoPlist.strings */; };
+		7DD5307218B95D8C009EF53C /* Golden_TriangleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5307118B95D8C009EF53C /* Golden_TriangleTests.m */; };
+		7DD5307D18B95DDC009EF53C /* MyOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5307C18B95DDC009EF53C /* MyOpenGLView.m */; };
+		7DD5307F18B95F00009EF53C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD5307E18B95F00009EF53C /* OpenGL.framework */; };
+		7DD5308218BA0A88009EF53C /* CustomOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5308118BA0A88009EF53C /* CustomOpenGLView.m */; };
+		7DD5308418BA0D65009EF53C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD5308318BA0D65009EF53C /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DD5306918B95D8C009EF53C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DD5303C18B95D8C009EF53C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DD5304318B95D8C009EF53C;
+			remoteInfo = "Golden Triangle";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7DD5304418B95D8C009EF53C /* Golden Triangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golden Triangle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD5304718B95D8C009EF53C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7DD5304A18B95D8C009EF53C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7DD5304B18B95D8C009EF53C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7DD5304C18B95D8C009EF53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7DD5304F18B95D8C009EF53C /* Golden Triangle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Golden Triangle-Info.plist"; sourceTree = "<group>"; };
+		7DD5305118B95D8C009EF53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DD5305318B95D8C009EF53C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DD5305518B95D8C009EF53C /* Golden Triangle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Golden Triangle-Prefix.pch"; sourceTree = "<group>"; };
+		7DD5305718B95D8C009EF53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7DD5305918B95D8C009EF53C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7DD5305A18B95D8C009EF53C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7DD5305D18B95D8C009EF53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7DD5305F18B95D8C009EF53C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7DD5306518B95D8C009EF53C /* Golden TriangleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Golden TriangleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD5306618B95D8C009EF53C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7DD5306D18B95D8C009EF53C /* Golden TriangleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Golden TriangleTests-Info.plist"; sourceTree = "<group>"; };
+		7DD5306F18B95D8C009EF53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DD5307118B95D8C009EF53C /* Golden_TriangleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Golden_TriangleTests.m; sourceTree = "<group>"; };
+		7DD5307B18B95DDC009EF53C /* MyOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenGLView.h; sourceTree = "<group>"; };
+		7DD5307C18B95DDC009EF53C /* MyOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOpenGLView.m; sourceTree = "<group>"; };
+		7DD5307E18B95F00009EF53C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7DD5308018BA0A88009EF53C /* CustomOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOpenGLView.h; sourceTree = "<group>"; };
+		7DD5308118BA0A88009EF53C /* CustomOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOpenGLView.m; sourceTree = "<group>"; };
+		7DD5308318BA0D65009EF53C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DD5304118B95D8C009EF53C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5308418BA0D65009EF53C /* GLUT.framework in Frameworks */,
+				7DD5307F18B95F00009EF53C /* OpenGL.framework in Frameworks */,
+				7DD5304818B95D8C009EF53C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD5306218B95D8C009EF53C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5306818B95D8C009EF53C /* Cocoa.framework in Frameworks */,
+				7DD5306718B95D8C009EF53C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DD5303B18B95D8C009EF53C = {
+			isa = PBXGroup;
+			children = (
+				7DD5304D18B95D8C009EF53C /* Golden Triangle */,
+				7DD5306B18B95D8C009EF53C /* Golden TriangleTests */,
+				7DD5304618B95D8C009EF53C /* Frameworks */,
+				7DD5304518B95D8C009EF53C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DD5304518B95D8C009EF53C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5304418B95D8C009EF53C /* Golden Triangle.app */,
+				7DD5306518B95D8C009EF53C /* Golden TriangleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DD5304618B95D8C009EF53C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5308318BA0D65009EF53C /* GLUT.framework */,
+				7DD5307E18B95F00009EF53C /* OpenGL.framework */,
+				7DD5304718B95D8C009EF53C /* Cocoa.framework */,
+				7DD5306618B95D8C009EF53C /* XCTest.framework */,
+				7DD5304918B95D8C009EF53C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DD5304918B95D8C009EF53C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5304A18B95D8C009EF53C /* AppKit.framework */,
+				7DD5304B18B95D8C009EF53C /* CoreData.framework */,
+				7DD5304C18B95D8C009EF53C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7DD5304D18B95D8C009EF53C /* Golden Triangle */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5305918B95D8C009EF53C /* AppDelegate.h */,
+				7DD5305A18B95D8C009EF53C /* AppDelegate.m */,
+				7DD5305C18B95D8C009EF53C /* MainMenu.xib */,
+				7DD5305F18B95D8C009EF53C /* Images.xcassets */,
+				7DD5304E18B95D8C009EF53C /* Supporting Files */,
+				7DD5307B18B95DDC009EF53C /* MyOpenGLView.h */,
+				7DD5307C18B95DDC009EF53C /* MyOpenGLView.m */,
+				7DD5308018BA0A88009EF53C /* CustomOpenGLView.h */,
+				7DD5308118BA0A88009EF53C /* CustomOpenGLView.m */,
+			);
+			path = "Golden Triangle";
+			sourceTree = "<group>";
+		};
+		7DD5304E18B95D8C009EF53C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5304F18B95D8C009EF53C /* Golden Triangle-Info.plist */,
+				7DD5305018B95D8C009EF53C /* InfoPlist.strings */,
+				7DD5305318B95D8C009EF53C /* main.m */,
+				7DD5305518B95D8C009EF53C /* Golden Triangle-Prefix.pch */,
+				7DD5305618B95D8C009EF53C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD5306B18B95D8C009EF53C /* Golden TriangleTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5307118B95D8C009EF53C /* Golden_TriangleTests.m */,
+				7DD5306C18B95D8C009EF53C /* Supporting Files */,
+			);
+			path = "Golden TriangleTests";
+			sourceTree = "<group>";
+		};
+		7DD5306C18B95D8C009EF53C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5306D18B95D8C009EF53C /* Golden TriangleTests-Info.plist */,
+				7DD5306E18B95D8C009EF53C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DD5304318B95D8C009EF53C /* Golden Triangle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD5307518B95D8C009EF53C /* Build configuration list for PBXNativeTarget "Golden Triangle" */;
+			buildPhases = (
+				7DD5304018B95D8C009EF53C /* Sources */,
+				7DD5304118B95D8C009EF53C /* Frameworks */,
+				7DD5304218B95D8C009EF53C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Golden Triangle";
+			productName = "Golden Triangle";
+			productReference = 7DD5304418B95D8C009EF53C /* Golden Triangle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7DD5306418B95D8C009EF53C /* Golden TriangleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD5307818B95D8C009EF53C /* Build configuration list for PBXNativeTarget "Golden TriangleTests" */;
+			buildPhases = (
+				7DD5306118B95D8C009EF53C /* Sources */,
+				7DD5306218B95D8C009EF53C /* Frameworks */,
+				7DD5306318B95D8C009EF53C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DD5306A18B95D8C009EF53C /* PBXTargetDependency */,
+			);
+			name = "Golden TriangleTests";
+			productName = "Golden TriangleTests";
+			productReference = 7DD5306518B95D8C009EF53C /* Golden TriangleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DD5303C18B95D8C009EF53C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Blukee;
+				TargetAttributes = {
+					7DD5306418B95D8C009EF53C = {
+						TestTargetID = 7DD5304318B95D8C009EF53C;
+					};
+				};
+			};
+			buildConfigurationList = 7DD5303F18B95D8C009EF53C /* Build configuration list for PBXProject "Golden Triangle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DD5303B18B95D8C009EF53C;
+			productRefGroup = 7DD5304518B95D8C009EF53C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DD5304318B95D8C009EF53C /* Golden Triangle */,
+				7DD5306418B95D8C009EF53C /* Golden TriangleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DD5304218B95D8C009EF53C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5305218B95D8C009EF53C /* InfoPlist.strings in Resources */,
+				7DD5306018B95D8C009EF53C /* Images.xcassets in Resources */,
+				7DD5305818B95D8C009EF53C /* Credits.rtf in Resources */,
+				7DD5305E18B95D8C009EF53C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD5306318B95D8C009EF53C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5307018B95D8C009EF53C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DD5304018B95D8C009EF53C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5308218BA0A88009EF53C /* CustomOpenGLView.m in Sources */,
+				7DD5305B18B95D8C009EF53C /* AppDelegate.m in Sources */,
+				7DD5305418B95D8C009EF53C /* main.m in Sources */,
+				7DD5307D18B95DDC009EF53C /* MyOpenGLView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD5306118B95D8C009EF53C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD5307218B95D8C009EF53C /* Golden_TriangleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DD5306A18B95D8C009EF53C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DD5304318B95D8C009EF53C /* Golden Triangle */;
+			targetProxy = 7DD5306918B95D8C009EF53C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7DD5305018B95D8C009EF53C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD5305118B95D8C009EF53C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7DD5305618B95D8C009EF53C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD5305718B95D8C009EF53C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7DD5305C18B95D8C009EF53C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD5305D18B95D8C009EF53C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		7DD5306E18B95D8C009EF53C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DD5306F18B95D8C009EF53C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DD5307318B95D8C009EF53C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7DD5307418B95D8C009EF53C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7DD5307618B95D8C009EF53C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Golden Triangle/Golden Triangle-Prefix.pch";
+				INFOPLIST_FILE = "Golden Triangle/Golden Triangle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7DD5307718B95D8C009EF53C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Golden Triangle/Golden Triangle-Prefix.pch";
+				INFOPLIST_FILE = "Golden Triangle/Golden Triangle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7DD5307918B95D8C009EF53C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Golden Triangle.app/Contents/MacOS/Golden Triangle";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Golden Triangle/Golden Triangle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Golden TriangleTests/Golden TriangleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7DD5307A18B95D8C009EF53C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Golden Triangle.app/Contents/MacOS/Golden Triangle";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Golden Triangle/Golden Triangle-Prefix.pch";
+				INFOPLIST_FILE = "Golden TriangleTests/Golden TriangleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DD5303F18B95D8C009EF53C /* Build configuration list for PBXProject "Golden Triangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD5307318B95D8C009EF53C /* Debug */,
+				7DD5307418B95D8C009EF53C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DD5307518B95D8C009EF53C /* Build configuration list for PBXNativeTarget "Golden Triangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD5307618B95D8C009EF53C /* Debug */,
+				7DD5307718B95D8C009EF53C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DD5307818B95D8C009EF53C /* Build configuration list for PBXNativeTarget "Golden TriangleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD5307918B95D8C009EF53C /* Debug */,
+				7DD5307A18B95D8C009EF53C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DD5303C18B95D8C009EF53C /* Project object */;
+}
